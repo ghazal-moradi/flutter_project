@@ -1,0 +1,15 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+Location _$LocationFromJson(Map<String, dynamic> json) => Location(
+      country: json['country'] as String?,
+      coordinates: json['coordinates'] == null
+          ? null
+          : Coordinates.fromJson(json['coordinates'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$LocationToJson(Location instance) => <String, dynamic>{
+      'country': instance.country,
+      'coordinates': instance.coordinates,
+    };

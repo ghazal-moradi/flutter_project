@@ -1,0 +1,19 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+UserModel _$UserModelFromJson(Map<String, dynamic> json) => UserModel(
+      email: json['email'] as String?,
+      location: json['location'] == null
+          ? null
+          : Location.fromJson(json['location'] as Map<String, dynamic>),
+      coordinates: json['coordinates'] == null
+          ? null
+          : Coordinates.fromJson(json['coordinates'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$UserModelToJson(UserModel instance) => <String, dynamic>{
+      'email': instance.email,
+      'location': instance.location,
+      'coordinates': instance.coordinates,
+    };
